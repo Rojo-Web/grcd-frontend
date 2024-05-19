@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue';
 import Clases from '../views/clases.vue';
 import EditarClase from '../components/clases/EditarClase.vue';
 import NewClase from '../components/clases/NewClase.vue';
+import Reservas from '../views/reservas.vue';
+import EditarReserva from '../components/reservas/EditarReserva.vue';
+import NewReserva from '../components/reservas/NewReserva.vue';
 
 const routes = [{
         path: '/',
@@ -23,6 +26,21 @@ const routes = [{
         path: '/add-clases/',
         name: 'NewClase',
         component: NewClase
+    },
+    {
+        path: '/reservas',
+        name: 'Reservas',
+        component: Reservas
+    },
+    {
+        path: '/editar-reserva/:id',
+        name: 'EditarReserva',
+        component: EditarReserva
+    },
+    {
+        path: '/add-reservas/',
+        name: 'NewReserva',
+        component: NewReserva
     },
     {
         path: '/about',
