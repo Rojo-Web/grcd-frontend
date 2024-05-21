@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link>|
     <router-link to="/clases">Clases</router-link> |
     <router-link to="/reservas">Reservas</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/instalaciones">Instalaciones</router-link>|
+    <router-link to="/about">About</router-link>|
   </nav>
   <router-view/>
 </template>

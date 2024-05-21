@@ -6,8 +6,13 @@ import NewClase from '../components/clases/NewClase.vue';
 import Reservas from '../views/reservas.vue';
 import EditarReserva from '../components/reservas/EditarReserva.vue';
 import NewReserva from '../components/reservas/NewReserva.vue';
+import Instalaciones from '../views/instalaciones.vue';
+import NewInstalacion from '../components/instalaciones/NewInstalacion.vue';
+import EditarInstalacion from '../components/instalaciones/EditarInstalacion.vue';
 
-const routes = [{
+
+const routes = [
+    {
         path: '/',
         name: 'home',
         component: HomeView
@@ -41,6 +46,21 @@ const routes = [{
         path: '/add-reservas/',
         name: 'NewReserva',
         component: NewReserva
+    },
+    {
+        path: '/instalaciones',
+        name: 'Instalaciones',
+        component: Instalaciones
+    },
+    {
+        path: '/editar-instalacion/:id',
+        name: 'EditarInstalacion',
+        component: EditarInstalacion
+    },
+    {
+        path: '/add-instalaciones/',
+        name: 'NewInstalacion',
+        component: NewInstalacion
     },
     {
         path: '/about',
