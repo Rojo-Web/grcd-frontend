@@ -4,6 +4,7 @@
     <router-link to="/clases">Clases</router-link> |
     <router-link to="/reservas">Reservas</router-link> |
     <router-link to="/instalaciones">Instalaciones</router-link>|
+    <router-link to="/clientes">Clientes</router-link>|
     <router-link to="/about">About</router-link>|
   </nav>
   <router-view/>

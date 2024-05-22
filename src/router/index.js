@@ -9,6 +9,9 @@ import NewReserva from '../components/reservas/NewReserva.vue';
 import Instalaciones from '../views/instalaciones.vue';
 import NewInstalacion from '../components/instalaciones/NewInstalacion.vue';
 import EditarInstalacion from '../components/instalaciones/EditarInstalacion.vue';
+import Clientes from '../views/clientes.vue';
+import NewCliente from '../components/clientes/NewCliente.vue';
+import EditarCliente from '../components/clientes/EditarCliente.vue';
 
 
 const routes = [
@@ -61,6 +64,22 @@ const routes = [
         path: '/add-instalaciones/',
         name: 'NewInstalacion',
         component: NewInstalacion
+    },
+
+    {
+        path: '/clientes',
+        name: 'Clientes',
+        component: Clientes
+    },
+    {
+        path: '/editar-cliente/:id',
+        name: 'EditarCliente',
+        component: EditarCliente
+    },
+    {
+        path: '/add-clientes/',
+        name: 'NewCliente',
+        component: NewCliente
     },
     {
         path: '/about',
