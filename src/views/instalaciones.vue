@@ -4,8 +4,8 @@
         <div class="col-12 text-center">
           <div class="alert alert-success" role="alert">
             <h1 class="mb-0" style="color: green">
-              CUSTOMERS 
-              <button @click="newInstalacion()" class="btn btn-succes mx-2">
+              INSTALACIONES 
+              <button @click="newInstalacion()" class="btn btn-success mx-2">
                 <font-awesome-icon icon="plus" />
               </button>
             </h1>
@@ -16,20 +16,19 @@
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Nombre</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Capacidad</th>
                 <th scope="col">Disponibilidad</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="(instalacion, index) in instalaciones" :key="index">
-                <th scope="row">{{ instalaciones.id }}</th>
-                <td>{{ instalaciones.nombre }}</td>
-                <td>{{ instalaciones.first_name }}</td>
-                <td>{{ instalaciones.tipo }}</td>
-                <td>{{ instalaciones.capacidad }}</td>
-                <td>{{ instalaciones.disponibilidad }}</td>
+                <th scope="row">{{ instalacion.id }}</th>
+                <td>{{ instalacion.nombre }}</td>
+                <td>{{ instalacion.tipo }}</td>
+                <td>{{ instalacion.capacidad }}</td>
+                <td>{{ instalacion.disponibilidad }}</td>
                 <td>
                   <button @click="deleteInstalacion(instalacion.id)" class="btn btn-danger me-2">
                     <font-awesome-icon icon="trash" />

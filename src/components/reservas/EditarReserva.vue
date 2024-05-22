@@ -121,12 +121,6 @@ export default {
             }
         }
     },
-    mounted() {
-        this.reserva.id = this.$route.params.id;
-        console.log(`http://127.0.0.1:8000/api/reservas/${this.reserva.id}`)
-        axios
-            .get(`http://127.0.0.1:8000/api/reservas/${this.reserva.id}`)
-            .then(response => {this.reserva = response.data.reserva;this.clientes = response.data.clientes;this.instalaciones = response.data.instalaciones})
-    },
+    mounted() {},
 }
 </script>
