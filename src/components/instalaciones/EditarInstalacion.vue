@@ -1,7 +1,7 @@
 <template>
   <br />
   <div class="container text-start">
-    <h1 class="text-primary fw-bold text-center">Nueva Instalacion</h1>
+    <h1 class="text-primary fw-bold text-center">Editar Instalacion</h1>
     <div class="container">
       <br />
 
