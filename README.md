@@ -13,7 +13,7 @@ Vue.js: Framework progresivo de JavaScript utilizado para construir interfaces d
 Axios: Librería para realizar peticiones HTTP desde el frontend hacia el backend.
 ```
 
-### Aqui podras crear y regirar:
+### Aqui podras crear y registrar:
 ```
 Clientes
 Clases
