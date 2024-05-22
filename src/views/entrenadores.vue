@@ -95,5 +95,9 @@
     },
   };
   
+<<<<<<< HEAD
   </script> 
+=======
+  </script>
+>>>>>>> sebastianV
   

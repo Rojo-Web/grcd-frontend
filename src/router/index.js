@@ -12,7 +12,9 @@ import EditarInstalacion from '../components/instalaciones/EditarInstalacion.vue
 import Clientes from '../views/clientes.vue';
 import NewCliente from '../components/clientes/NewCliente.vue';
 import EditarCliente from '../components/clientes/EditarCliente.vue';
-
+import Entrenadores from '../views/entrenadores.vue';
+import NewEntrenador from '../components/entrenadores/NewEntrenador.vue';
+import EditarEntrenador from '../components/entrenadores/EditarEntrenador.vue';
 
 const routes = [
     {
@@ -81,6 +83,23 @@ const routes = [
         name: 'NewCliente',
         component: NewCliente
     },
+
+    {
+        path: '/entrenadores',
+        name: 'Entrenadores',
+        component: Entrenadores
+    },
+    {
+        path: '/add-entrenadores/',
+        name: 'NewEntrenador',
+        component: NewEntrenador
+    },
+    {
+        path: '/editar-entrenador/:id',
+        name: 'EditarEntrenador',
+        component: EditarEntrenador
+    },
+
     {
         path: '/about',
         name: 'about',
