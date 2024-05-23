@@ -4,7 +4,7 @@
       <div class="col-12 text-center">
         <div class="alert alert-success" role="alert">
           <h1 class="mb-0" style="color: green">
-            Clases
+            CLASES
 
             <button @click="newClase()" class="btn btn-success mx-2">
               <font-awesome-icon icon="plus" />
