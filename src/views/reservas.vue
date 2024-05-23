@@ -3,11 +3,13 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="alert alert-success" role="alert">
-                    <h1 class="mb-0" style="color: green;">Reservas</h1>
-                </div>
-                <button @click="newReserva()" class="btn btn-succes mx-2">
+                    <h1 class="mb-0" style="color: green;">RESERVAS
+                
+                <button @click="newReserva()" class="btn btn-success mx-2">
                     <font-awesome-icon icon="plus" />
                 </button>
+            </h1>
+            </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
