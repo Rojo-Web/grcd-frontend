@@ -1,11 +1,11 @@
 <template>
     <br />
     <div class="container text-start">
-      <h1 class="text-primary fw-bold text-center">Editar Cliente</h1>
+      <h1 class="text-primary fw-bold text-center">Editar Entrenador</h1>
       <div class="container">
         <br />
   
-        <form @submit.prevent="updateCliente">
+        <form @submit.prevent="updateEntrenador">
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="id" class="form-label">Id</label>
@@ -13,8 +13,8 @@
                 <div class="input-group-text">
                   <font-awesome-icon icon="tag" />
                 </div>
-                <input type="text" class="form-control" id="id" name="id" placeholder="Id cliente" disabled
-                  v-model="cliente.id" />
+                <input type="text" class="form-control" id="id" name="id" placeholder="Id entrenador" disabled
+                  v-model="entrenador.id" />
               </div>
             </div>
           </div>
@@ -26,41 +26,36 @@
                   <font-awesome-icon icon="user" />
                 </div>
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                  v-model="cliente.nombre" />
+                  v-model="entrenador.nombre" />
               </div>
             </div>
-  
+
+          <div class="row mb-3">
             <div class="col-md-6">
+                <br>
               <label for="apellido" class="form-label">Apellido</label>
               <div class="input-group">
                 <div class="input-group-text">
-                  <font-awesome-icon icon="building" />
+                  <font-awesome-icon icon="user" />
                 </div>
                 <input type="text" class="form-control" id="apellido" name="apellido" placeholder="apellido"
-                  v-model="cliente.apellido" />
+                  v-model="entrenador.apellido" />
               </div>
-            </div>
-            
+            </div> 
           </div>
+
+          </div>
+
           <div class="row mb-3">
+        
             <div class="col-md-6">
-              <label for="telefono" class="form-label">Telefono</label>
-              <div class="input-group">
-                <div class="input-group-text">
-                  <font-awesome-icon icon="chart-bar" />
-                </div>
-                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="telefono"
-                  v-model="cliente.telefono" />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">Correo</label>
+              <label for="especialidad" class="form-label">Especialidad</label>
               <div class="input-group">
                 <div class="input-group-text">
                   <font-awesome-icon icon="map-marker-alt" />
                 </div>
-                <input type="text" class="form-control" id="email" name="email"
-                  placeholder="email" v-model="cliente.email" />
+                <input type="text" class="form-control" id="especialidad" name="especialidad"
+                  placeholder="Especialidad" v-model="entrenador.especialidad" />
               </div>
             </div>
           </div>
@@ -83,47 +78,46 @@
   import Swal from "sweetalert2";
   
   export default {
-    name: "EditarCliente",
+    name: "EditarEntrenador",
     data() {
       return {
-        cliente: {
+        entrenador: {
           id: 0,
           nombre: "",
           apellido: "",
-          telefono: 0,
-          email: "",
+          especialidad: "",
         },
       };
     },
   
     methods: {
     cancelar() {
-      this.$router.push({ name: 'Clientes' }); // Cambiado de 'Cliente' a 'Clientes'
+      this.$router.push({ name: 'Entrenadores' }); // Cambiado de 'Entrenador' a 'Entrenadores'
     },
   
-    async updateCliente() {
+    async updateEntrenador() {
       try {
-        const url = `http://127.0.0.1:8000/api/clientes/${this.cliente.id}`;
+        const url = `http://127.0.0.1:8000/api/entrenadores/${this.entrenador.id}`;
         console.log("URL:", url);
-        console.log("Data:", this.cliente);
+        console.log("Data:", this.entrenador);
   
-          const res = await axios.put(url, this.cliente);
+          const res = await axios.put(url, this.entrenador);
           if (res.status === 200) {
-            this.$router.push({ name: 'Clientes' });
+            this.$router.push({ name: 'Entrenadores' });
             Swal.fire({
-              position: 'top-end',
+              position: 'center',
               icon: 'success',
-              title: 'Cliente actualizado',
+              title: 'Entrenador actualizado',
               showConfirmButton: false,
               timer: 2000
             });
           }
         } catch (error) {
-          console.error("Error al actualizar el cliente:", error.response);
+          console.error("Error al actualizar el entrenador:", error.response);
           Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: `No se pudo actualizar el cliente: ${error.response?.data?.message || error.message}`
+            text: `No se pudo actualizar el entrenador: ${error.response?.data?.message || error.message}`
           });
         }
       }
@@ -132,15 +126,15 @@
     mounted() {
       console.log(this.$route.params.id);
   
-      this.cliente.id = this.$route.params.id;
-      console.log(this.cliente.id);
-      console.log(`http://127.0.0.1:8000/api/clientes/${this.cliente.id}`);
-      axios.get(`http://127.0.0.1:8000/api/clientes/${this.cliente.id}`)
+      this.entrenador.id = this.$route.params.id;
+      console.log(this.entrenador.id);
+      console.log(`http://127.0.0.1:8000/api/entrenadores/${this.entrenador.id}`);
+      axios.get(`http://127.0.0.1:8000/api/entrenadores/${this.entrenador.id}`)
         .then((response) => {
-          this.cliente = response.data.cliente;
+          this.entrenador = response.data.entrenador;
         })
         .catch((error) => {
-          console.error("Error al obtener el cliente:", error);
+          console.error("Error al obtener el entrenador:", error);
         });
     }
   };

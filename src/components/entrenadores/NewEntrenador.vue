@@ -1,11 +1,11 @@
 <template>
     <br>
     <div class="container text-start">
-      <h1 class="text-primary fw-bold text-center">Nuevo Cliente</h1>
+      <h1 class="text-primary fw-bold text-center">Nuevo Entrenador</h1>
       <div class="container">
         <br>
         
-        <form @submit.prevent="saveCliente">
+        <form @submit.prevent="saveEntrenador">
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="id" class="form-label">Id</label>
@@ -13,8 +13,8 @@
                 <div class="input-group-text">
                   <font-awesome-icon icon="tag" />
                 </div>
-                <input type="text" class="form-control" id="id" name="id" placeholder="Id cliente" disabled
-                  v-model="clientes.id" />
+                <input type="text" class="form-control" id="id" name="id" placeholder="Id entrenador" disabled
+                  v-model="entrenador.id" />
               </div>
             </div>
           </div>
@@ -24,42 +24,36 @@
               <div class="input-group">
                 <div class="input-group-text"><font-awesome-icon icon="user" /></div>
                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                  v-model="clientes.nombre" />
+                  v-model="entrenador.nombre" />
               </div>
             </div>
+            
+          </div>
+
+          <div class="row mb-3">
             <div class="col-md-6">
               <label for="apellido" class="form-label">Apellido</label>
               <div class="input-group">
                 <div class="input-group-text">
-                  <font-awesome-icon icon="building" />
+                  <font-awesome-icon icon="user" />
                 </div>
                 <input type="text" class="form-control" id="apellido" name="apellido" placeholder="apellido"
-                  v-model="clientes.apellido" />
+                  v-model="entrenador.apellido" />
               </div>
             </div>
+
           </div>
-          <div class="row mb-3">
+
             <div class="col-md-6">
-              <label for="telefono" class="form-label">Telefono</label>
-              <div class="input-group">
-                <div class="input-group-text">
-                  <font-awesome-icon icon="chart-bar" />
-                </div>
-                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="telefono"
-                  v-model="clientes.telefono" />
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="email" class="form-label">Correo</label>
+              <label for="especialidad" class="form-label">Especialidad</label>
               <div class="input-group">
                 <div class="input-group-text">
                   <font-awesome-icon icon="map-marker-alt" />
                 </div>
-                <input type="email" class="form-control" id="email" name="email" placeholder="email"
-                  v-model="clientes.email" />
+                <input type="text" class="form-control" id="especialidad" name="especialidad" placeholder="Especialidad"
+                  v-model="entrenador.especialidad" />
               </div>
-            </div>
-          </div>
+            </div>     
           <br>
           <div class="row mb-3">
             <div class="col-md-12 text-start">
@@ -79,48 +73,35 @@
   import Swal from "sweetalert2";
   
   export default {
-    name: "NewCliente",
+    name: "NewEntrenador",
     data() {
       return {
-        clientes: {
+        entrenador: {
           id: 0,
           nombre: "",
           apellido: "",
-          telefono: "",
-          email: "",
+          especialidad: "",
         },
       };
     },
   
     methods: {
       cancelar() {
-        this.$router.push({ name: "Clientes" });
+        this.$router.push({ name: "Entrenadores" });
       },
-      async saveCliente() {
-        console.log(
-          "ID: " +
-          this.clientes.id +
-          "\n" +
-          this.clientes.nombre +
-          "\nName: " +
-          this.clientes.apellido +
-          "\n" +
-          this.clientes.telefono +
-          "\n" +
-          this.clientes.email
-  
-        );
+      async saveEntrenador() {
+        
         const res = await axios.post(
-          "http://127.0.0.1:8000/api/clientes/",
-          this.clientes
+          "http://127.0.0.1:8000/api/entrenadores/",
+          this.entrenador
         );
         console.log(res);
         if (res.status === 200) {
-          this.$router.push({ name: "Clientes" });
+          this.$router.push({ name: "Entrenadores" });
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Clientesactualizado",
+            title: "Entrenadoresactualizado",
             showConfirmButton: false,
             timer: 2000,
           });
