@@ -138,8 +138,8 @@
         });
     }
   };
-<<<<<<< HEAD
+
   </script>  
-======= 
-  </script> 
->>>>>>> sebastianV
+
+  
+
