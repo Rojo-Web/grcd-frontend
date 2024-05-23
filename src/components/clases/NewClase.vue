@@ -11,7 +11,7 @@
 
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-4" style="margin-right: 435px;">
-                    <div class="mb-3">
+                    <div class="mb-">
                         <label for="codigo" class="form-label">Id</label>
                         <div class="input-group">
                             <div class="input-group-text"><font-awesome-icon icon="tag" /></div>
@@ -23,69 +23,68 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <div class="input-group">
-                            <div class="input-group-text"><font-awesome-icon icon="building" /></div>
-                            <input type="text" class="form-control" id="nombre" aria-describedby="codigoHelp"
-                                name="nombre" v-model='clase.nombre'>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Descripcion</label>
-                        <div class="input-group">
-                            <div class="input-group-text"><font-awesome-icon icon="building" /></div>
-                            <input type="text" class="form-control" id="descripcion" aria-describedby="codigoHelp"
-                                name="descripcion" v-model='clase.descripcion'>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Hora de inicio</label>
-                        <div class="input-group">
-                            <div class="input-group-text"><font-awesome-icon icon="building" /></div>
-                            <input type="datetime-local" class="form-control" id="hora_inicio" aria-describedby="codigoHelp"
-                                name="hora_inicio" v-model='clase.hora_inicio'>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="codigo" class="form-label">Duracion</label>
-                        <div class="input-group">
-                            <div class="input-group-text"><font-awesome-icon icon="bank" /></div>
-                            <input type="number" class="form-control" id="duracion" aria-describedby="codigoHelp"
-                                name="duracion" v-model='clase.duracion'>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="codigo" class="form-label">Instalacion </label>
-                        <div class="input-group">
-                            <select class="form-select" v-model="clase.instalacion_id">
-                                <option v-for="instalacion in instalaciones" v-bind:value="instalacion.id">{{ instalacion.nombre
-                                    }}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mb-3">
-                        <label for="codigo" class="form-label">Entrenador </label>
-                        <div class="input-group">
-                            <select class="form-select" v-model="clase.entrenador_id">
-                                <option v-for="entrenador in entrenadores" v-bind:value="entrenador.id">{{ entrenador.nombre
-                                    }}</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <div class="input-group">
+                <div class="input-group-text"><font-awesome-icon icon="building" /></div>
+                <input type="text" class="form-control" id="nombre" aria-describedby="codigoHelp" name="nombre" v-model='clase.nombre'>
             </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <div class="input-group">
+                <div class="input-group-text"><font-awesome-icon icon="building" /></div>
+                <input type="text" class="form-control" id="descripcion" aria-describedby="codigoHelp" name="descripcion" v-model='clase.descripcion'>
+            </div>
+        </div>
+    </div>
+    <div class="w-100"></div> <!-- Break to next row -->
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="hora_inicio" class="form-label">Hora de inicio</label>
+            <div class="input-group">
+                <div class="input-group-text"><font-awesome-icon icon="building" /></div>
+                <input type="datetime-local" class="form-control" id="hora_inicio" aria-describedby="codigoHelp" name="hora_inicio" v-model='clase.hora_inicio'>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="duracion" class="form-label">Duracion</label>
+            <div class="input-group">
+                <div class="input-group-text"><font-awesome-icon icon="bank" /></div>
+                <input type="number" class="form-control" id="duracion" aria-describedby="codigoHelp" name="duracion" v-model='clase.duracion'>
+            </div>
+        </div>
+    </div>
+    <div class="w-100"></div> <!-- Break to next row -->
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="instalacion" class="form-label">Instalacion</label>
+            <div class="input-group">
+                <select class="form-select" v-model="clase.instalacion_id">
+                    <option v-for="instalacion in instalaciones" v-bind:value="instalacion.id">{{ instalacion.nombre }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mb-3">
+            <label for="entrenador" class="form-label">Entrenador</label>
+            <div class="input-group">
+                <select class="form-select" v-model="clase.entrenador_id">
+                    <option v-for="entrenador in entrenadores" v-bind:value="entrenador.id">{{ entrenador.nombre }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
             <button class="btn btn-primary" type="submit">Save</button>
             <button class="btn btn-secondary mx-2" @click="cancelar">Cancelar</button>
         </form>
